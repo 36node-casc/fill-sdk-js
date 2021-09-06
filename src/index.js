@@ -125,7 +125,9 @@ export default class SDK {
      * @returns {Promise<ListPaperworksResponse>} A paged array of sheets
      */
     listPaperworks: req => {
-      const { query } = req || {};
+      const { sheetId, query } = req || {};
+
+      if (!sheetId) throw new Error("sheetId is required for listPaperworks");
 
       return fetch(`${this.base}/sheets/${sheetId}/paperworks`, {
         method: "GET",
@@ -161,7 +163,8 @@ export default class SDK {
       const { sheetId, paperworkId } = req || {};
 
       if (!sheetId) throw new Error("sheetId is required for getPaperwork");
-      if (!paperworkId) throw new Error("paperworkId is required for getPaperwork");
+      if (!paperworkId)
+        throw new Error("paperworkId is required for getPaperwork");
 
       return fetch(`${this.base}/sheets/${sheetId}/paperworks/${paperworkId}`, {
         method: "GET",
@@ -177,7 +180,8 @@ export default class SDK {
       const { sheetId, paperworkId } = req || {};
 
       if (!sheetId) throw new Error("sheetId is required for removePaperwork");
-      if (!paperworkId) throw new Error("paperworkId is required for removePaperwork");
+      if (!paperworkId)
+        throw new Error("paperworkId is required for removePaperwork");
 
       return fetch(`${this.base}/sheets/${sheetId}/paperworks/${paperworkId}`, {
         method: "DELETE",
@@ -230,7 +234,8 @@ export default class SDK {
     getCategory: req => {
       const { categoryId } = req || {};
 
-      if (!categoryId) throw new Error("categoryId is required for getCategory");
+      if (!categoryId)
+        throw new Error("categoryId is required for getCategory");
 
       return fetch(`${this.base}/categories/${categoryId}`, {
         method: "GET",
@@ -246,7 +251,8 @@ export default class SDK {
     updateCategory: req => {
       const { categoryId, body } = req || {};
 
-      if (!categoryId) throw new Error("categoryId is required for updateCategory");
+      if (!categoryId)
+        throw new Error("categoryId is required for updateCategory");
       if (!body) throw new Error("requetBody is required for updateCategory");
 
       return fetch(`${this.base}/categories/${categoryId}`, {
@@ -263,7 +269,8 @@ export default class SDK {
     deleteCategory: req => {
       const { categoryId } = req || {};
 
-      if (!categoryId) throw new Error("categoryId is required for deleteCategory");
+      if (!categoryId)
+        throw new Error("categoryId is required for deleteCategory");
 
       return fetch(`${this.base}/categories/${categoryId}`, {
         method: "DELETE",

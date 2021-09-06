@@ -1221,6 +1221,7 @@ export interface DeleteSheetRequest {
   sheetId: string;
 }
 export interface ListPaperworksRequest {
+  sheetId: string;
   query?: {
     _limit?: number;
     _offset?: number;
