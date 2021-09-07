@@ -1238,10 +1238,6 @@ export interface ListPaperworksResponse {
      */
     answers?: ({
       /**
-       * 字段 id
-       */
-      field: string;
-      /**
        * 字段 key
        */
       key?: string;
@@ -1270,21 +1266,47 @@ export interface ListPaperworksResponse {
       createBy?: string;
     } & {
       /**
-       * 字段所属分类，[{第一层分类}, {第二层分类}]
+       * 字段
        */
-      categories: ({
+      field: {
         /**
-         * 描述
+         * 表单字段的默认值
+         */
+        defaultValue?: {
+          [k: string]: any;
+        };
+        /**
+         * 字段描述
          */
         description?: string;
         /**
-         * 标题
+         * 是否是模板
+         */
+        isTemplate?: boolean;
+        /**
+         * 字段 key
+         */
+        key?: string;
+        /**
+         * 表单字段标题
          */
         title?: string;
         /**
-         * 父类别
+         * 字段的占位字符
          */
-        parent?: string;
+        placeholder?: string;
+        /**
+         * 是否是必须的字段
+         */
+        required?: boolean;
+        /**
+         * 字段校验规则
+         */
+        rules?: {}[];
+        /**
+         * 字段类型
+         */
+        type?: string;
       } & {
         /**
          * mongodb id
@@ -1296,10 +1318,49 @@ export interface ListPaperworksResponse {
         createBy?: string;
       } & {
         /**
-         * 标题
+         * 字段所属分类数组，最顶层在第一个元素
+         */
+        categories: ({
+          /**
+           * 描述
+           */
+          description?: string;
+          /**
+           * 标题
+           */
+          title?: string;
+          /**
+           * 父类别
+           */
+          parent?: string;
+        } & {
+          /**
+           * mongodb id
+           */
+          id: string;
+          updateAt?: Date;
+          updateBy?: string;
+          createAt?: Date;
+          createBy?: string;
+        } & {
+          /**
+           * 标题
+           */
+          title: string;
+        })[];
+        /**
+         * 表单字段标题
          */
         title: string;
-      })[];
+        /**
+         * 是否是必须的字段
+         */
+        required: boolean;
+        /**
+         * 字段类型
+         */
+        type: string;
+      };
     })[];
     /**
      * 描述
@@ -1336,10 +1397,6 @@ export interface ListPaperworksResponse {
      */
     answers: ({
       /**
-       * 字段 id
-       */
-      field: string;
-      /**
        * 字段 key
        */
       key?: string;
@@ -1368,21 +1425,47 @@ export interface ListPaperworksResponse {
       createBy?: string;
     } & {
       /**
-       * 字段所属分类，[{第一层分类}, {第二层分类}]
+       * 字段
        */
-      categories: ({
+      field: {
         /**
-         * 描述
+         * 表单字段的默认值
+         */
+        defaultValue?: {
+          [k: string]: any;
+        };
+        /**
+         * 字段描述
          */
         description?: string;
         /**
-         * 标题
+         * 是否是模板
+         */
+        isTemplate?: boolean;
+        /**
+         * 字段 key
+         */
+        key?: string;
+        /**
+         * 表单字段标题
          */
         title?: string;
         /**
-         * 父类别
+         * 字段的占位字符
          */
-        parent?: string;
+        placeholder?: string;
+        /**
+         * 是否是必须的字段
+         */
+        required?: boolean;
+        /**
+         * 字段校验规则
+         */
+        rules?: {}[];
+        /**
+         * 字段类型
+         */
+        type?: string;
       } & {
         /**
          * mongodb id
@@ -1394,10 +1477,49 @@ export interface ListPaperworksResponse {
         createBy?: string;
       } & {
         /**
-         * 标题
+         * 字段所属分类数组，最顶层在第一个元素
+         */
+        categories: ({
+          /**
+           * 描述
+           */
+          description?: string;
+          /**
+           * 标题
+           */
+          title?: string;
+          /**
+           * 父类别
+           */
+          parent?: string;
+        } & {
+          /**
+           * mongodb id
+           */
+          id: string;
+          updateAt?: Date;
+          updateBy?: string;
+          createAt?: Date;
+          createBy?: string;
+        } & {
+          /**
+           * 标题
+           */
+          title: string;
+        })[];
+        /**
+         * 表单字段标题
          */
         title: string;
-      })[];
+        /**
+         * 是否是必须的字段
+         */
+        required: boolean;
+        /**
+         * 字段类型
+         */
+        type: string;
+      };
     })[];
     /**
      * 调查者，可以能有多人
@@ -1416,10 +1538,6 @@ export interface AddPaperworkRequest {
      */
     answers?: ({
       /**
-       * 字段 id
-       */
-      field: string;
-      /**
        * 字段 key
        */
       key?: string;
@@ -1448,21 +1566,47 @@ export interface AddPaperworkRequest {
       createBy?: string;
     } & {
       /**
-       * 字段所属分类，[{第一层分类}, {第二层分类}]
+       * 字段
        */
-      categories: ({
+      field: {
         /**
-         * 描述
+         * 表单字段的默认值
+         */
+        defaultValue?: {
+          [k: string]: any;
+        };
+        /**
+         * 字段描述
          */
         description?: string;
         /**
-         * 标题
+         * 是否是模板
+         */
+        isTemplate?: boolean;
+        /**
+         * 字段 key
+         */
+        key?: string;
+        /**
+         * 表单字段标题
          */
         title?: string;
         /**
-         * 父类别
+         * 字段的占位字符
          */
-        parent?: string;
+        placeholder?: string;
+        /**
+         * 是否是必须的字段
+         */
+        required?: boolean;
+        /**
+         * 字段校验规则
+         */
+        rules?: {}[];
+        /**
+         * 字段类型
+         */
+        type?: string;
       } & {
         /**
          * mongodb id
@@ -1474,10 +1618,49 @@ export interface AddPaperworkRequest {
         createBy?: string;
       } & {
         /**
-         * 标题
+         * 字段所属分类数组，最顶层在第一个元素
+         */
+        categories: ({
+          /**
+           * 描述
+           */
+          description?: string;
+          /**
+           * 标题
+           */
+          title?: string;
+          /**
+           * 父类别
+           */
+          parent?: string;
+        } & {
+          /**
+           * mongodb id
+           */
+          id: string;
+          updateAt?: Date;
+          updateBy?: string;
+          createAt?: Date;
+          createBy?: string;
+        } & {
+          /**
+           * 标题
+           */
+          title: string;
+        })[];
+        /**
+         * 表单字段标题
          */
         title: string;
-      })[];
+        /**
+         * 是否是必须的字段
+         */
+        required: boolean;
+        /**
+         * 字段类型
+         */
+        type: string;
+      };
     })[];
     /**
      * 描述
@@ -1505,10 +1688,6 @@ export interface AddPaperworkRequest {
      */
     answers: ({
       /**
-       * 字段 id
-       */
-      field: string;
-      /**
        * 字段 key
        */
       key?: string;
@@ -1528,9 +1707,9 @@ export interface AddPaperworkRequest {
       };
     } & {
       /**
-       * 答案所属分类，["第一层分类id", "第二层分类id"]
+       * field id
        */
-      categories?: string[];
+      field?: string;
     })[];
     /**
      * 调查者，可以能有多人
@@ -1539,18 +1718,11 @@ export interface AddPaperworkRequest {
   };
 }
 export interface AddPaperworkResponse {
-  /**
-   * 填表结果
-   */
   body: {
     /**
      * 答案
      */
     answers?: ({
-      /**
-       * 字段 id
-       */
-      field: string;
       /**
        * 字段 key
        */
@@ -1580,21 +1752,47 @@ export interface AddPaperworkResponse {
       createBy?: string;
     } & {
       /**
-       * 字段所属分类，[{第一层分类}, {第二层分类}]
+       * 字段
        */
-      categories: ({
+      field: {
         /**
-         * 描述
+         * 表单字段的默认值
+         */
+        defaultValue?: {
+          [k: string]: any;
+        };
+        /**
+         * 字段描述
          */
         description?: string;
         /**
-         * 标题
+         * 是否是模板
+         */
+        isTemplate?: boolean;
+        /**
+         * 字段 key
+         */
+        key?: string;
+        /**
+         * 表单字段标题
          */
         title?: string;
         /**
-         * 父类别
+         * 字段的占位字符
          */
-        parent?: string;
+        placeholder?: string;
+        /**
+         * 是否是必须的字段
+         */
+        required?: boolean;
+        /**
+         * 字段校验规则
+         */
+        rules?: {}[];
+        /**
+         * 字段类型
+         */
+        type?: string;
       } & {
         /**
          * mongodb id
@@ -1606,106 +1804,49 @@ export interface AddPaperworkResponse {
         createBy?: string;
       } & {
         /**
-         * 标题
+         * 字段所属分类数组，最顶层在第一个元素
+         */
+        categories: ({
+          /**
+           * 描述
+           */
+          description?: string;
+          /**
+           * 标题
+           */
+          title?: string;
+          /**
+           * 父类别
+           */
+          parent?: string;
+        } & {
+          /**
+           * mongodb id
+           */
+          id: string;
+          updateAt?: Date;
+          updateBy?: string;
+          createAt?: Date;
+          createBy?: string;
+        } & {
+          /**
+           * 标题
+           */
+          title: string;
+        })[];
+        /**
+         * 表单字段标题
          */
         title: string;
-      })[];
-    })[];
-    /**
-     * 描述
-     */
-    description?: string;
-    /**
-     * 调查者，可以能有多人
-     */
-    inspectors?: string[];
-    /**
-     * 所属命名空间
-     */
-    ns?: string;
-    /**
-     * 被调查人
-     */
-    respondent?: string;
-    /**
-     * 得分
-     */
-    score?: number;
-  };
-}
-export interface GetPaperworkRequest {
-  sheetId: string;
-  paperworkId: string;
-}
-export interface GetPaperworkResponse {
-  body: {
-    /**
-     * 答案
-     */
-    answers?: ({
-      /**
-       * 字段 id
-       */
-      field: string;
-      /**
-       * 字段 key
-       */
-      key?: string;
-      /**
-       * 表单字段标题
-       */
-      title: string;
-      /**
-       * 备注
-       */
-      remark?: string;
-      /**
-       * 值
-       */
-      value: {
-        [k: string]: any;
+        /**
+         * 是否是必须的字段
+         */
+        required: boolean;
+        /**
+         * 字段类型
+         */
+        type: string;
       };
-    } & {
-      /**
-       * mongodb id
-       */
-      id: string;
-      updateAt?: Date;
-      updateBy?: string;
-      createAt?: Date;
-      createBy?: string;
-    } & {
-      /**
-       * 字段所属分类，[{第一层分类}, {第二层分类}]
-       */
-      categories: ({
-        /**
-         * 描述
-         */
-        description?: string;
-        /**
-         * 标题
-         */
-        title?: string;
-        /**
-         * 父类别
-         */
-        parent?: string;
-      } & {
-        /**
-         * mongodb id
-         */
-        id: string;
-        updateAt?: Date;
-        updateBy?: string;
-        createAt?: Date;
-        createBy?: string;
-      } & {
-        /**
-         * 标题
-         */
-        title: string;
-      })[];
     })[];
     /**
      * 描述
@@ -1742,9 +1883,146 @@ export interface GetPaperworkResponse {
      */
     answers: ({
       /**
-       * 字段 id
+       * 字段 key
        */
-      field: string;
+      key?: string;
+      /**
+       * 表单字段标题
+       */
+      title: string;
+      /**
+       * 备注
+       */
+      remark?: string;
+      /**
+       * 值
+       */
+      value: {
+        [k: string]: any;
+      };
+    } & {
+      /**
+       * mongodb id
+       */
+      id: string;
+      updateAt?: Date;
+      updateBy?: string;
+      createAt?: Date;
+      createBy?: string;
+    } & {
+      /**
+       * 字段
+       */
+      field: {
+        /**
+         * 表单字段的默认值
+         */
+        defaultValue?: {
+          [k: string]: any;
+        };
+        /**
+         * 字段描述
+         */
+        description?: string;
+        /**
+         * 是否是模板
+         */
+        isTemplate?: boolean;
+        /**
+         * 字段 key
+         */
+        key?: string;
+        /**
+         * 表单字段标题
+         */
+        title?: string;
+        /**
+         * 字段的占位字符
+         */
+        placeholder?: string;
+        /**
+         * 是否是必须的字段
+         */
+        required?: boolean;
+        /**
+         * 字段校验规则
+         */
+        rules?: {}[];
+        /**
+         * 字段类型
+         */
+        type?: string;
+      } & {
+        /**
+         * mongodb id
+         */
+        id: string;
+        updateAt?: Date;
+        updateBy?: string;
+        createAt?: Date;
+        createBy?: string;
+      } & {
+        /**
+         * 字段所属分类数组，最顶层在第一个元素
+         */
+        categories: ({
+          /**
+           * 描述
+           */
+          description?: string;
+          /**
+           * 标题
+           */
+          title?: string;
+          /**
+           * 父类别
+           */
+          parent?: string;
+        } & {
+          /**
+           * mongodb id
+           */
+          id: string;
+          updateAt?: Date;
+          updateBy?: string;
+          createAt?: Date;
+          createBy?: string;
+        } & {
+          /**
+           * 标题
+           */
+          title: string;
+        })[];
+        /**
+         * 表单字段标题
+         */
+        title: string;
+        /**
+         * 是否是必须的字段
+         */
+        required: boolean;
+        /**
+         * 字段类型
+         */
+        type: string;
+      };
+    })[];
+    /**
+     * 调查者，可以能有多人
+     */
+    inspectors: string[];
+  };
+}
+export interface GetPaperworkRequest {
+  sheetId: string;
+  paperworkId: string;
+}
+export interface GetPaperworkResponse {
+  body: {
+    /**
+     * 答案
+     */
+    answers?: ({
       /**
        * 字段 key
        */
@@ -1774,21 +2052,47 @@ export interface GetPaperworkResponse {
       createBy?: string;
     } & {
       /**
-       * 字段所属分类，[{第一层分类}, {第二层分类}]
+       * 字段
        */
-      categories: ({
+      field: {
         /**
-         * 描述
+         * 表单字段的默认值
+         */
+        defaultValue?: {
+          [k: string]: any;
+        };
+        /**
+         * 字段描述
          */
         description?: string;
         /**
-         * 标题
+         * 是否是模板
+         */
+        isTemplate?: boolean;
+        /**
+         * 字段 key
+         */
+        key?: string;
+        /**
+         * 表单字段标题
          */
         title?: string;
         /**
-         * 父类别
+         * 字段的占位字符
          */
-        parent?: string;
+        placeholder?: string;
+        /**
+         * 是否是必须的字段
+         */
+        required?: boolean;
+        /**
+         * 字段校验规则
+         */
+        rules?: {}[];
+        /**
+         * 字段类型
+         */
+        type?: string;
       } & {
         /**
          * mongodb id
@@ -1800,10 +2104,208 @@ export interface GetPaperworkResponse {
         createBy?: string;
       } & {
         /**
-         * 标题
+         * 字段所属分类数组，最顶层在第一个元素
+         */
+        categories: ({
+          /**
+           * 描述
+           */
+          description?: string;
+          /**
+           * 标题
+           */
+          title?: string;
+          /**
+           * 父类别
+           */
+          parent?: string;
+        } & {
+          /**
+           * mongodb id
+           */
+          id: string;
+          updateAt?: Date;
+          updateBy?: string;
+          createAt?: Date;
+          createBy?: string;
+        } & {
+          /**
+           * 标题
+           */
+          title: string;
+        })[];
+        /**
+         * 表单字段标题
          */
         title: string;
-      })[];
+        /**
+         * 是否是必须的字段
+         */
+        required: boolean;
+        /**
+         * 字段类型
+         */
+        type: string;
+      };
+    })[];
+    /**
+     * 描述
+     */
+    description?: string;
+    /**
+     * 调查者，可以能有多人
+     */
+    inspectors?: string[];
+    /**
+     * 所属命名空间
+     */
+    ns?: string;
+    /**
+     * 被调查人
+     */
+    respondent?: string;
+    /**
+     * 得分
+     */
+    score?: number;
+  } & {
+    /**
+     * mongodb id
+     */
+    id: string;
+    updateAt?: Date;
+    updateBy?: string;
+    createAt?: Date;
+    createBy?: string;
+  } & {
+    /**
+     * 答案
+     */
+    answers: ({
+      /**
+       * 字段 key
+       */
+      key?: string;
+      /**
+       * 表单字段标题
+       */
+      title: string;
+      /**
+       * 备注
+       */
+      remark?: string;
+      /**
+       * 值
+       */
+      value: {
+        [k: string]: any;
+      };
+    } & {
+      /**
+       * mongodb id
+       */
+      id: string;
+      updateAt?: Date;
+      updateBy?: string;
+      createAt?: Date;
+      createBy?: string;
+    } & {
+      /**
+       * 字段
+       */
+      field: {
+        /**
+         * 表单字段的默认值
+         */
+        defaultValue?: {
+          [k: string]: any;
+        };
+        /**
+         * 字段描述
+         */
+        description?: string;
+        /**
+         * 是否是模板
+         */
+        isTemplate?: boolean;
+        /**
+         * 字段 key
+         */
+        key?: string;
+        /**
+         * 表单字段标题
+         */
+        title?: string;
+        /**
+         * 字段的占位字符
+         */
+        placeholder?: string;
+        /**
+         * 是否是必须的字段
+         */
+        required?: boolean;
+        /**
+         * 字段校验规则
+         */
+        rules?: {}[];
+        /**
+         * 字段类型
+         */
+        type?: string;
+      } & {
+        /**
+         * mongodb id
+         */
+        id: string;
+        updateAt?: Date;
+        updateBy?: string;
+        createAt?: Date;
+        createBy?: string;
+      } & {
+        /**
+         * 字段所属分类数组，最顶层在第一个元素
+         */
+        categories: ({
+          /**
+           * 描述
+           */
+          description?: string;
+          /**
+           * 标题
+           */
+          title?: string;
+          /**
+           * 父类别
+           */
+          parent?: string;
+        } & {
+          /**
+           * mongodb id
+           */
+          id: string;
+          updateAt?: Date;
+          updateBy?: string;
+          createAt?: Date;
+          createBy?: string;
+        } & {
+          /**
+           * 标题
+           */
+          title: string;
+        })[];
+        /**
+         * 表单字段标题
+         */
+        title: string;
+        /**
+         * 是否是必须的字段
+         */
+        required: boolean;
+        /**
+         * 字段类型
+         */
+        type: string;
+      };
     })[];
     /**
      * 调查者，可以能有多人
@@ -2826,7 +3328,7 @@ export interface GetCountOfSheetsRequest {
     _limit?: number;
     _offset?: number;
     _sort?: string;
-    _group?: ("createAt" | "label" | "industry" | "ns")[];
+    _group?: ("createAt" | "labels" | "industry" | "ns")[];
     createAt_lt?: string;
     createAt_gt?: string;
     labels?: string[];
@@ -2863,7 +3365,7 @@ export interface GetCountOfSheetsResponse {
     /**
      * 标签
      */
-    label?: string;
+    labels?: string;
     /**
      * 行业
      */
@@ -3188,7 +3690,7 @@ export type AnswerCountGroup =
 
 export type PaperworkCountGroup = "createAt" | "inspector" | "ns" | "respondent" | "sheet";
 
-export type SheetCountGroup = "createAt" | "label" | "industry" | "ns";
+export type SheetCountGroup = "createAt" | "labels" | "industry" | "ns";
 
 /**
  * Group of date
@@ -3413,6 +3915,91 @@ export type SheetCreateDoc = {
    * 拥有者
    */
   owner: string;
+};
+
+/**
+ * 表单创建文档
+ */
+export type SheetUpdateDoc = {
+  /**
+   * 关闭时间
+   */
+  closeAt?: Date;
+  /**
+   * 描述
+   */
+  description?: string;
+  /**
+   * 行业
+   */
+  industry?: string;
+  /**
+   * 是否是模板
+   */
+  isTemplate?: boolean;
+  /**
+   * 标签
+   */
+  labels?: string[];
+  /**
+   * logo
+   */
+  logo?: string;
+  /**
+   * 名称
+   */
+  name?: string;
+  /**
+   * 所属命名空间
+   */
+  ns?: string;
+  /**
+   * 拥有者
+   */
+  owner?: string;
+  refs?: {
+    /**
+     * 资源在第三方的 origin id
+     */
+    oid: string;
+    /**
+     * 来源
+     */
+    source: string;
+    /**
+     * 名称
+     */
+    name?: string;
+    /**
+     * 描述
+     */
+    description?: string;
+    /**
+     * 类型
+     */
+    type?: string;
+    /**
+     * 唯一地址
+     */
+    uri?: string;
+  }[];
+  /**
+   * 别名
+   */
+  slug?: string;
+  /**
+   * 状态
+   */
+  state?: "OPEN" | "CLOSED";
+  /**
+   * 文档摘要，可以用于简介或者目录说明等
+   */
+  summary?: string;
+} & {
+  /**
+   * 字段
+   */
+  fields?: string[];
 };
 
 /**
@@ -3910,10 +4497,6 @@ export type Field = {
  */
 export interface AnswerDoc {
   /**
-   * 字段 id
-   */
-  field: string;
-  /**
    * 字段 key
    */
   key?: string;
@@ -3935,10 +4518,6 @@ export interface AnswerDoc {
 
 export type AnswerCreateDoc = {
   /**
-   * 字段 id
-   */
-  field: string;
-  /**
    * 字段 key
    */
   key?: string;
@@ -3958,16 +4537,12 @@ export type AnswerCreateDoc = {
   };
 } & {
   /**
-   * 答案所属分类，["第一层分类id", "第二层分类id"]
+   * field id
    */
-  categories?: string[];
+  field?: string;
 };
 
 export type Answer = {
-  /**
-   * 字段 id
-   */
-  field: string;
   /**
    * 字段 key
    */
@@ -3997,50 +4572,23 @@ export type Answer = {
   createBy?: string;
 } & {
   /**
-   * 字段所属分类，[{第一层分类}, {第二层分类}]
+   * 字段
    */
-  categories: ({
+  field: {
     /**
-     * 描述
+     * 表单字段的默认值
+     */
+    defaultValue?: {
+      [k: string]: any;
+    };
+    /**
+     * 字段描述
      */
     description?: string;
     /**
-     * 标题
+     * 是否是模板
      */
-    title?: string;
-    /**
-     * 父类别
-     */
-    parent?: string;
-  } & {
-    /**
-     * mongodb id
-     */
-    id: string;
-    updateAt?: Date;
-    updateBy?: string;
-    createAt?: Date;
-    createBy?: string;
-  } & {
-    /**
-     * 标题
-     */
-    title: string;
-  })[];
-};
-
-/**
- * 填表结果
- */
-export interface PaperworkDoc {
-  /**
-   * 答案
-   */
-  answers?: ({
-    /**
-     * 字段 id
-     */
-    field: string;
+    isTemplate?: boolean;
     /**
      * 字段 key
      */
@@ -4048,17 +4596,23 @@ export interface PaperworkDoc {
     /**
      * 表单字段标题
      */
-    title: string;
+    title?: string;
     /**
-     * 备注
+     * 字段的占位字符
      */
-    remark?: string;
+    placeholder?: string;
     /**
-     * 值
+     * 是否是必须的字段
      */
-    value: {
-      [k: string]: any;
-    };
+    required?: boolean;
+    /**
+     * 字段校验规则
+     */
+    rules?: {}[];
+    /**
+     * 字段类型
+     */
+    type?: string;
   } & {
     /**
      * mongodb id
@@ -4070,7 +4624,7 @@ export interface PaperworkDoc {
     createBy?: string;
   } & {
     /**
-     * 字段所属分类，[{第一层分类}, {第二层分类}]
+     * 字段所属分类数组，最顶层在第一个元素
      */
     categories: ({
       /**
@@ -4100,6 +4654,153 @@ export interface PaperworkDoc {
        */
       title: string;
     })[];
+    /**
+     * 表单字段标题
+     */
+    title: string;
+    /**
+     * 是否是必须的字段
+     */
+    required: boolean;
+    /**
+     * 字段类型
+     */
+    type: string;
+  };
+};
+
+/**
+ * 填表结果
+ */
+export interface PaperworkDoc {
+  /**
+   * 答案
+   */
+  answers?: ({
+    /**
+     * 字段 key
+     */
+    key?: string;
+    /**
+     * 表单字段标题
+     */
+    title: string;
+    /**
+     * 备注
+     */
+    remark?: string;
+    /**
+     * 值
+     */
+    value: {
+      [k: string]: any;
+    };
+  } & {
+    /**
+     * mongodb id
+     */
+    id: string;
+    updateAt?: Date;
+    updateBy?: string;
+    createAt?: Date;
+    createBy?: string;
+  } & {
+    /**
+     * 字段
+     */
+    field: {
+      /**
+       * 表单字段的默认值
+       */
+      defaultValue?: {
+        [k: string]: any;
+      };
+      /**
+       * 字段描述
+       */
+      description?: string;
+      /**
+       * 是否是模板
+       */
+      isTemplate?: boolean;
+      /**
+       * 字段 key
+       */
+      key?: string;
+      /**
+       * 表单字段标题
+       */
+      title?: string;
+      /**
+       * 字段的占位字符
+       */
+      placeholder?: string;
+      /**
+       * 是否是必须的字段
+       */
+      required?: boolean;
+      /**
+       * 字段校验规则
+       */
+      rules?: {}[];
+      /**
+       * 字段类型
+       */
+      type?: string;
+    } & {
+      /**
+       * mongodb id
+       */
+      id: string;
+      updateAt?: Date;
+      updateBy?: string;
+      createAt?: Date;
+      createBy?: string;
+    } & {
+      /**
+       * 字段所属分类数组，最顶层在第一个元素
+       */
+      categories: ({
+        /**
+         * 描述
+         */
+        description?: string;
+        /**
+         * 标题
+         */
+        title?: string;
+        /**
+         * 父类别
+         */
+        parent?: string;
+      } & {
+        /**
+         * mongodb id
+         */
+        id: string;
+        updateAt?: Date;
+        updateBy?: string;
+        createAt?: Date;
+        createBy?: string;
+      } & {
+        /**
+         * 标题
+         */
+        title: string;
+      })[];
+      /**
+       * 表单字段标题
+       */
+      title: string;
+      /**
+       * 是否是必须的字段
+       */
+      required: boolean;
+      /**
+       * 字段类型
+       */
+      type: string;
+    };
   })[];
   /**
    * 描述
@@ -4129,10 +4830,6 @@ export type PaperworkCreateDoc = {
    */
   answers?: ({
     /**
-     * 字段 id
-     */
-    field: string;
-    /**
      * 字段 key
      */
     key?: string;
@@ -4161,21 +4858,47 @@ export type PaperworkCreateDoc = {
     createBy?: string;
   } & {
     /**
-     * 字段所属分类，[{第一层分类}, {第二层分类}]
+     * 字段
      */
-    categories: ({
+    field: {
       /**
-       * 描述
+       * 表单字段的默认值
+       */
+      defaultValue?: {
+        [k: string]: any;
+      };
+      /**
+       * 字段描述
        */
       description?: string;
       /**
-       * 标题
+       * 是否是模板
+       */
+      isTemplate?: boolean;
+      /**
+       * 字段 key
+       */
+      key?: string;
+      /**
+       * 表单字段标题
        */
       title?: string;
       /**
-       * 父类别
+       * 字段的占位字符
        */
-      parent?: string;
+      placeholder?: string;
+      /**
+       * 是否是必须的字段
+       */
+      required?: boolean;
+      /**
+       * 字段校验规则
+       */
+      rules?: {}[];
+      /**
+       * 字段类型
+       */
+      type?: string;
     } & {
       /**
        * mongodb id
@@ -4187,10 +4910,49 @@ export type PaperworkCreateDoc = {
       createBy?: string;
     } & {
       /**
-       * 标题
+       * 字段所属分类数组，最顶层在第一个元素
+       */
+      categories: ({
+        /**
+         * 描述
+         */
+        description?: string;
+        /**
+         * 标题
+         */
+        title?: string;
+        /**
+         * 父类别
+         */
+        parent?: string;
+      } & {
+        /**
+         * mongodb id
+         */
+        id: string;
+        updateAt?: Date;
+        updateBy?: string;
+        createAt?: Date;
+        createBy?: string;
+      } & {
+        /**
+         * 标题
+         */
+        title: string;
+      })[];
+      /**
+       * 表单字段标题
        */
       title: string;
-    })[];
+      /**
+       * 是否是必须的字段
+       */
+      required: boolean;
+      /**
+       * 字段类型
+       */
+      type: string;
+    };
   })[];
   /**
    * 描述
@@ -4218,10 +4980,6 @@ export type PaperworkCreateDoc = {
    */
   answers: ({
     /**
-     * 字段 id
-     */
-    field: string;
-    /**
      * 字段 key
      */
     key?: string;
@@ -4241,9 +4999,9 @@ export type PaperworkCreateDoc = {
     };
   } & {
     /**
-     * 答案所属分类，["第一层分类id", "第二层分类id"]
+     * field id
      */
-    categories?: string[];
+    field?: string;
   })[];
   /**
    * 调查者，可以能有多人
@@ -4256,10 +5014,6 @@ export type Paperwork = {
    * 答案
    */
   answers?: ({
-    /**
-     * 字段 id
-     */
-    field: string;
     /**
      * 字段 key
      */
@@ -4289,21 +5043,47 @@ export type Paperwork = {
     createBy?: string;
   } & {
     /**
-     * 字段所属分类，[{第一层分类}, {第二层分类}]
+     * 字段
      */
-    categories: ({
+    field: {
       /**
-       * 描述
+       * 表单字段的默认值
+       */
+      defaultValue?: {
+        [k: string]: any;
+      };
+      /**
+       * 字段描述
        */
       description?: string;
       /**
-       * 标题
+       * 是否是模板
+       */
+      isTemplate?: boolean;
+      /**
+       * 字段 key
+       */
+      key?: string;
+      /**
+       * 表单字段标题
        */
       title?: string;
       /**
-       * 父类别
+       * 字段的占位字符
        */
-      parent?: string;
+      placeholder?: string;
+      /**
+       * 是否是必须的字段
+       */
+      required?: boolean;
+      /**
+       * 字段校验规则
+       */
+      rules?: {}[];
+      /**
+       * 字段类型
+       */
+      type?: string;
     } & {
       /**
        * mongodb id
@@ -4315,10 +5095,49 @@ export type Paperwork = {
       createBy?: string;
     } & {
       /**
-       * 标题
+       * 字段所属分类数组，最顶层在第一个元素
+       */
+      categories: ({
+        /**
+         * 描述
+         */
+        description?: string;
+        /**
+         * 标题
+         */
+        title?: string;
+        /**
+         * 父类别
+         */
+        parent?: string;
+      } & {
+        /**
+         * mongodb id
+         */
+        id: string;
+        updateAt?: Date;
+        updateBy?: string;
+        createAt?: Date;
+        createBy?: string;
+      } & {
+        /**
+         * 标题
+         */
+        title: string;
+      })[];
+      /**
+       * 表单字段标题
        */
       title: string;
-    })[];
+      /**
+       * 是否是必须的字段
+       */
+      required: boolean;
+      /**
+       * 字段类型
+       */
+      type: string;
+    };
   })[];
   /**
    * 描述
@@ -4355,10 +5174,6 @@ export type Paperwork = {
    */
   answers: ({
     /**
-     * 字段 id
-     */
-    field: string;
-    /**
      * 字段 key
      */
     key?: string;
@@ -4387,21 +5202,47 @@ export type Paperwork = {
     createBy?: string;
   } & {
     /**
-     * 字段所属分类，[{第一层分类}, {第二层分类}]
+     * 字段
      */
-    categories: ({
+    field: {
       /**
-       * 描述
+       * 表单字段的默认值
+       */
+      defaultValue?: {
+        [k: string]: any;
+      };
+      /**
+       * 字段描述
        */
       description?: string;
       /**
-       * 标题
+       * 是否是模板
+       */
+      isTemplate?: boolean;
+      /**
+       * 字段 key
+       */
+      key?: string;
+      /**
+       * 表单字段标题
        */
       title?: string;
       /**
-       * 父类别
+       * 字段的占位字符
        */
-      parent?: string;
+      placeholder?: string;
+      /**
+       * 是否是必须的字段
+       */
+      required?: boolean;
+      /**
+       * 字段校验规则
+       */
+      rules?: {}[];
+      /**
+       * 字段类型
+       */
+      type?: string;
     } & {
       /**
        * mongodb id
@@ -4413,10 +5254,49 @@ export type Paperwork = {
       createBy?: string;
     } & {
       /**
-       * 标题
+       * 字段所属分类数组，最顶层在第一个元素
+       */
+      categories: ({
+        /**
+         * 描述
+         */
+        description?: string;
+        /**
+         * 标题
+         */
+        title?: string;
+        /**
+         * 父类别
+         */
+        parent?: string;
+      } & {
+        /**
+         * mongodb id
+         */
+        id: string;
+        updateAt?: Date;
+        updateBy?: string;
+        createAt?: Date;
+        createBy?: string;
+      } & {
+        /**
+         * 标题
+         */
+        title: string;
+      })[];
+      /**
+       * 表单字段标题
        */
       title: string;
-    })[];
+      /**
+       * 是否是必须的字段
+       */
+      required: boolean;
+      /**
+       * 字段类型
+       */
+      type: string;
+    };
   })[];
   /**
    * 调查者，可以能有多人
@@ -4762,7 +5642,7 @@ export interface SheetsCount {
   /**
    * 标签
    */
-  label?: string;
+  labels?: string;
   /**
    * 行业
    */
