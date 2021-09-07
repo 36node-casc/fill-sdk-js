@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.1](https://github.com/36node/fill-sdk-js/compare/v0.1.0...v0.1.1) (2021-09-07)
+
+
+### Bug Fixes
+
+* sheet update with fields ([078f22c](https://github.com/36node/fill-sdk-js/commit/078f22c4d458f4437300b7915fce10e7af051696))
+
 ## [0.1.0](https://github.com/36node/fill-sdk-js/compare/v0.0.1...v0.1.0) (2021-09-07)
 
 ### 0.0.1 (2021-09-07)
