@@ -119,6 +119,8 @@ export interface ListSheetsRequest {
     _offset?: number;
     _sort?: string;
     _select?: string[];
+    createAt_lt?: string;
+    createAt_gt?: string;
     isTemplate?: boolean;
     labels?: string[];
     name_like?: string;
@@ -136,6 +138,10 @@ export interface ListSheetsResponse {
      * 关闭时间
      */
     closeAt?: Date;
+    /**
+     * 最后增加答卷的时间
+     */
+    addPaperworkAt?: Date;
     /**
      * 描述
      */
@@ -459,6 +465,10 @@ export interface CreateSheetResponse {
      */
     closeAt?: Date;
     /**
+     * 最后增加答卷的时间
+     */
+    addPaperworkAt?: Date;
+    /**
      * 描述
      */
     description?: string;
@@ -691,6 +701,10 @@ export interface GetSheetResponse {
      */
     closeAt?: Date;
     /**
+     * 最后增加答卷的时间
+     */
+    addPaperworkAt?: Date;
+    /**
      * 描述
      */
     description?: string;
@@ -913,7 +927,7 @@ export interface GetSheetResponse {
 export interface UpdateSheetRequest {
   sheetId: string;
   /**
-   * 表单 Doc
+   * 表单创建文档
    */
   body: {
     /**
@@ -986,6 +1000,11 @@ export interface UpdateSheetRequest {
      * 文档摘要，可以用于简介或者目录说明等
      */
     summary?: string;
+  } & {
+    /**
+     * 字段
+     */
+    fields?: string[];
   };
 }
 export interface UpdateSheetResponse {
@@ -997,6 +1016,10 @@ export interface UpdateSheetResponse {
      * 关闭时间
      */
     closeAt?: Date;
+    /**
+     * 最后增加答卷的时间
+     */
+    addPaperworkAt?: Date;
     /**
      * 描述
      */
@@ -3098,6 +3121,10 @@ export interface GetCountOfAnswersResponse {
        */
       closeAt?: Date;
       /**
+       * 最后增加答卷的时间
+       */
+      addPaperworkAt?: Date;
+      /**
        * 描述
        */
       description?: string;
@@ -3442,6 +3469,10 @@ export interface GetCountOfPaperworksResponse {
        */
       closeAt?: Date;
       /**
+       * 最后增加答卷的时间
+       */
+      addPaperworkAt?: Date;
+      /**
        * 描述
        */
       description?: string;
@@ -3753,6 +3784,10 @@ export interface SheetDoc {
    */
   closeAt?: Date;
   /**
+   * 最后增加答卷的时间
+   */
+  addPaperworkAt?: Date;
+  /**
    * 描述
    */
   description?: string;
@@ -3832,6 +3867,10 @@ export type SheetCreateDoc = {
    * 关闭时间
    */
   closeAt?: Date;
+  /**
+   * 最后增加答卷的时间
+   */
+  addPaperworkAt?: Date;
   /**
    * 描述
    */
@@ -3926,6 +3965,10 @@ export type SheetUpdateDoc = {
    */
   closeAt?: Date;
   /**
+   * 最后增加答卷的时间
+   */
+  addPaperworkAt?: Date;
+  /**
    * 描述
    */
   description?: string;
@@ -4010,6 +4053,10 @@ export type Sheet = {
    * 关闭时间
    */
   closeAt?: Date;
+  /**
+   * 最后增加答卷的时间
+   */
+  addPaperworkAt?: Date;
   /**
    * 描述
    */
@@ -5385,6 +5432,10 @@ export interface AnswersCount {
      */
     closeAt?: Date;
     /**
+     * 最后增加答卷的时间
+     */
+    addPaperworkAt?: Date;
+    /**
      * 描述
      */
     description?: string;
@@ -5706,6 +5757,10 @@ export interface PaperworksCount {
      * 关闭时间
      */
     closeAt?: Date;
+    /**
+     * 最后增加答卷的时间
+     */
+    addPaperworkAt?: Date;
     /**
      * 描述
      */
