@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.2](https://github.com/36node/fill-sdk-js/compare/v0.1.1...v0.1.2) (2021-09-09)
+
+
+### Features
+
+* **sheet:** addPaperworkAt and fix updateSheet body ([74548b9](https://github.com/36node/fill-sdk-js/commit/74548b9104e673f9047d4e51bdeb3262f1f687b4))
+
 ### [0.1.1](https://github.com/36node/fill-sdk-js/compare/v0.1.0...v0.1.1) (2021-09-07)
 
 
