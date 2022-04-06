@@ -365,6 +365,43 @@ export default class SDK {
     },
   };
   /**
+   * audit's methods
+   */
+  audit = {
+    /**
+     * List audit records
+     *
+     * @param {ListRecordsRequest} req listRecords request
+     * @returns {Promise<ListRecordsResponse>} A paged array of audit records
+     */
+    listRecords: req => {
+      const { query } = req || {};
+
+      return fetch(`${this.base}/audit/records`, {
+        method: "GET",
+        query,
+        headers: { Authorization: this.auth },
+      });
+    },
+    /**
+     * Create a audit record
+     *
+     * @param {CreateRecordRequest} req createRecord request
+     * @returns {Promise<CreateRecordResponse>} The audit record created
+     */
+    createRecord: req => {
+      const { body } = req || {};
+
+      if (!body) throw new Error("requetBody is required for createRecord");
+
+      return fetch(`${this.base}/audit/records`, {
+        method: "POST",
+        body,
+        headers: { Authorization: this.auth },
+      });
+    },
+  };
+  /**
    * counts's methods
    */
   counts = {

@@ -8,6 +8,7 @@ declare class SDK {
   sheet: SheetAPI;
   category: CategoryAPI;
   field: FieldAPI;
+  audit: AuditAPI;
   counts: CountsAPI;
 }
 
@@ -97,6 +98,16 @@ export interface FieldAPI {
    * Delete field
    */
   deleteField(req: DeleteFieldRequest): Promise<void>;
+}
+export interface AuditAPI {
+  /**
+   * List audit records
+   */
+  listRecords(req: ListRecordsRequest): Promise<ListRecordsResponse>;
+  /**
+   * Create a audit record
+   */
+  createRecord(req: CreateRecordRequest): Promise<CreateRecordResponse>;
 }
 export interface CountsAPI {
   /**
@@ -3297,6 +3308,92 @@ export interface UpdateFieldResponse {
 export interface DeleteFieldRequest {
   fieldId: string;
 }
+export interface ListRecordsRequest {
+  query?: {
+    _limit?: number;
+    _offset?: number;
+    _sort?: string;
+    _select?: string[];
+    user?: string;
+    createAt_gt?: string;
+    createAt_lt?: string;
+  };
+}
+export interface ListRecordsResponse {
+  body: ({
+    /**
+     * 用户 id
+     */
+    user?: string;
+    /**
+     * 所属命名空间
+     */
+    ns?: string;
+    /**
+     * 内容
+     */
+    content?: string;
+  } & {
+    /**
+     * mongodb id
+     */
+    id: string;
+    updateAt?: Date;
+    updateBy?: string;
+    createAt?: Date;
+    createBy?: string;
+  })[];
+  headers: {
+    "x-total-count"?: number;
+  };
+}
+export interface CreateRecordRequest {
+  /**
+   * 审计记录 CreateDoc
+   */
+  body: {
+    /**
+     * 用户 id
+     */
+    user: string;
+    /**
+     * 所属命名空间
+     */
+    ns: string;
+    /**
+     * 内容
+     */
+    content: string;
+  };
+}
+export interface CreateRecordResponse {
+  /**
+   * 审计记录
+   */
+  body: {
+    /**
+     * 用户 id
+     */
+    user?: string;
+    /**
+     * 所属命名空间
+     */
+    ns?: string;
+    /**
+     * 内容
+     */
+    content?: string;
+  } & {
+    /**
+     * mongodb id
+     */
+    id: string;
+    updateAt?: Date;
+    updateBy?: string;
+    createAt?: Date;
+    createBy?: string;
+  };
+}
 export interface GetCountOfAnswersRequest {
   query?: {
     _limit?: number;
@@ -5358,6 +5455,69 @@ export type Paperwork = {
    * 调查者，可以能有多人
    */
   inspectors: string[];
+};
+
+/**
+ * 审计记录 Doc
+ */
+export interface AuditRecordDoc {
+  /**
+   * 用户 id
+   */
+  user?: string;
+  /**
+   * 所属命名空间
+   */
+  ns?: string;
+  /**
+   * 内容
+   */
+  content?: string;
+}
+
+/**
+ * 审计记录 CreateDoc
+ */
+export interface AuditRecordCreateDoc {
+  /**
+   * 用户 id
+   */
+  user: string;
+  /**
+   * 所属命名空间
+   */
+  ns: string;
+  /**
+   * 内容
+   */
+  content: string;
+}
+
+/**
+ * 审计记录
+ */
+export type AuditRecord = {
+  /**
+   * 用户 id
+   */
+  user?: string;
+  /**
+   * 所属命名空间
+   */
+  ns?: string;
+  /**
+   * 内容
+   */
+  content?: string;
+} & {
+  /**
+   * mongodb id
+   */
+  id: string;
+  updateAt?: Date;
+  updateBy?: string;
+  createAt?: Date;
+  createBy?: string;
 };
 
 /**
