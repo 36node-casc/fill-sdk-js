@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.4](https://github.com/36node/fill-sdk-js/compare/v0.1.3...v0.1.4) (2022-04-06)
+
+
+### Features
+
+* audit ([9cb1091](https://github.com/36node/fill-sdk-js/commit/9cb1091e8d8b0fe9de3625c55e54178a2d5aefd0))
+
 ### [0.1.3](https://github.com/36node/fill-sdk-js/compare/v0.1.2...v0.1.3) (2022-04-04)
 
 
